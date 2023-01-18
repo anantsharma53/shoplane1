@@ -1,0 +1,82 @@
+
+.icon-container{
+    display: flex;
+    align-items: center;
+}
+hr{
+    margin: 2px;
+    box-shadow: 0 20px 20px -20px #333;
+    border-bottom: 1px solid #1f1209;    
+}
+.HederSection{
+    display: flex;
+    
+    justify-content: space-between;
+    margin-left: 75px;
+    margin-right: 75px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.leftHeader{
+    display: flex;
+}
+.BrandFirstName{
+    color: rgb(59, 163, 248);
+}
+.rightHeader{
+    display: inline-flex;
+    float: left;
+    gap: 10px;
+}
+
+.navbar-nav.mr-auto{
+    
+    font-size: 20px;
+    gap: 20px;
+    
+  }
+.DropDownState{
+    display: inline-flex; 
+     
+}
+.dropdown{
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.btn.btn-secondary.dropdown-toggle{
+    background-color: #fff;
+    color: #1f1209;
+    border: 1px solid #4e4e4e;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(75, 74, 74, 0.4);
+}
+
+
+.flex-items{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+  }
+  
+  .label-warning[href],
+  .badge-warning[href] {
+    background-color: #c67605;
+  }
+  #lblCartCount {
+      font-size: 15px;
+      background: #ff0000;
+      color: #fff;
+      padding: 1px 5px;
+      margin-left: -10px;
+      margin-top: -15px;
+      
+  }
+ 
