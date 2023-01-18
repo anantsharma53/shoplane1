@@ -19,10 +19,12 @@ import "./PageLoader.css";
                     </g>
                 </g>
             </svg>
+            <p className="container">Loading...</p>
 
 
-            <p></p>
+            
         </div>
+        
 
     )
 }

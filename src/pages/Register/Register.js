@@ -3,6 +3,7 @@ import "./Register.css";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../components/Shared/Footer/Footer";
 import Header from "../../components/Shared/Header/Header";
+import { Link } from "react-router-dom";
 
 function Register() {
   const [user, setUser] = useState({});
@@ -36,6 +37,7 @@ function Register() {
       <Header></Header>
     <div className="Sign-container">
       <div class="mb-3">
+      <h2 class="text-uppercase text-center mb-1 mt-1">Create an account</h2>
         <label for="exampleFormControlInput1" class="form-label">
           Email address
         </label>
@@ -113,10 +115,14 @@ function Register() {
       </div>
       <input
         onClick={handleSubmit}
-        className="btn btn-primary"
-        value="Register"
+        className="btn btn-primary btn-block mb-4"
+        value="Signup"
         type="submit"
       />
+        <p class="text-center text-muted ">Have already an account? <a href="#!"
+                    class="fw-bold text-body">
+                      <Link to="/Login">Login here</Link></a></p>
+   
     </div>
     <Footer></Footer>
     </div>
