@@ -45,7 +45,7 @@ function WomenCloth() {
     ) : (
     <div>
       <Header  />
-      <div className="container mt-3">
+      <div className="container">
         {error &&
          //<h2 className="mt-3">No Products to Show</h2>
          <BarLoader></BarLoader>

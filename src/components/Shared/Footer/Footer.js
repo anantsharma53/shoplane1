@@ -10,7 +10,12 @@ import {
 import { faCopyright } from "@fortawesome/free-solid-svg-icons";
 
 function Footer() {
-  return( <footer className="footer">
+  return( 
+  <div >
+    
+    <br/><br/><br/><br/><br/>
+
+  <footer className="footer">
             <div className="footer-container">
                 <div className="item1">
                     
@@ -49,6 +54,7 @@ function Footer() {
                
             </div>
         </footer>
+        </div>
         );
 }
 

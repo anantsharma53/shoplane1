@@ -46,7 +46,7 @@ function Jewelery() {
     ) : (
     <div>
       <Header  />
-      <div className="container mt-3">
+      <div className="container">
         {error && 
        <BarLoader></BarLoader>
         //<h2 className="mt-3">No Products to Show</h2>

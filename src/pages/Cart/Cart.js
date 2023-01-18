@@ -30,7 +30,7 @@ const Cart = (props) => {
 
           <div class="col-md-10">
 
-            <div class="card">
+            <div class="">
 
               <div class="card-body cart">
                 <div class="col-sm-12 empty-cart-cls text-center">
@@ -66,7 +66,7 @@ const Cart = (props) => {
 
         <div className="right">
           <div class="col-md-30">
-            <div class="card mb-4">
+            <div class="flex wrap mb-4">
               <div class="card-header py-3">
                 <h5 class="mb-0">Summary</h5>
               </div>

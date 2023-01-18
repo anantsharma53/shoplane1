@@ -15,6 +15,7 @@ import Jewelery from './pages/Jewelery/Jewelery';
 import MenCloth from './pages/MenCloth/MenCloth';
 import WomenCloth from './pages/WomenCloth/WomenCloth';
 import ProductSingle from './components/ProductSinglePage/ProductSingle';
+import NotFoundPage from "./pages/PageNotFound/Error";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -24,6 +25,7 @@ root.render(
       <Routes>       
         <Route path="/" element={<Home />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/cart/cart" element={<Cart />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/electronics" element={<Electronic />}></Route>
@@ -39,6 +41,10 @@ root.render(
         <Route path="/products/:id" element={<ProductSingle />}></Route>
         <Route path="/electronics/Cart" element={<Cart />}></Route>
         <Route path="/products/:id/Cart" element={<Cart />}></Route>
+        <Route path="/Login/Cart" element={<Cart />}></Route>
+        <Route path="/register/Cart" element={<Cart />}></Route>
+        <Route path="*" element={<NotFoundPage />}></Route>
+        
       </Routes>
     </BrowserRouter>
   </Provider>

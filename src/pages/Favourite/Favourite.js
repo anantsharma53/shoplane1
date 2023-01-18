@@ -42,7 +42,7 @@ const FavCart = (props) => {
     ) : (
       <div>
         <Header />
-        <div className="container mt-3">
+        <div className="container ">
 
           <div className="row">
             {items.map((p, i) => (

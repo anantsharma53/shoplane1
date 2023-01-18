@@ -10,7 +10,6 @@ hr{
 }
 .HederSection{
     display: flex;
-    
     justify-content: space-between;
     margin-left: 75px;
     margin-right: 75px;
@@ -79,4 +78,19 @@ hr{
       margin-top: -15px;
       
   }
+  
+@media screen and (max-width:600px){
+    .HederSection{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+    
+
+}
  
