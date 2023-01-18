@@ -134,7 +134,7 @@ h2 {
     }
     .row{
         align-items: center;
-        
+        position: relative;
         margin-left: 20px;
         margin-top: 0px;
         margin-bottom: 0;

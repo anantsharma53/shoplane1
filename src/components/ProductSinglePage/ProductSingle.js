@@ -74,9 +74,9 @@ function ProductSingle() {
         <div>
             <Header></Header>
             <div class="container  md-5 ">
-                <div class="row ">
+                <div class=" ">
                     <div class="col-md-10">
-                        <div class="card">
+                        <div class="">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="images p-3">
@@ -103,9 +103,9 @@ function ProductSingle() {
                                             <span class="text-uppercase text-muted brand">{product.category}</span>
                                             <h5 class="text-uppercase">{product.title}</h5>
                                             <div class="price d-flex flex-row align-items-center">
-                                                <span class="act-price">{product.price}</span>
+                                                <span class="act-price">&#8377;{product.price}</span>
                                                 <div class="ml-2">
-                                                    <small class="dis-price">{product.price*2}</small>
+                                                    <small class="dis-price">&#8377;{product.price*2}</small>
                                                     <span>50% OFF</span> </div>
                                             </div>
                                         </div>

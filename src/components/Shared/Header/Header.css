@@ -90,6 +90,12 @@ hr{
         margin-top: 1px;
         margin-bottom: 1px;
     }
+    .navbar-toggler{
+        margin-left: 10px;
+    }
+    .collapse.navbar-collapse.justify-content-center{
+        margin-left: 20px;
+    }
     
 
 }

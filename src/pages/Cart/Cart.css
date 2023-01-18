@@ -37,6 +37,9 @@
 .btn.btn-warning.subtotal-container:hover{
     background-color: none;
 }
+.cartBill.btn-group.btn-group-toggle{
+display: none;
+}
 @media screen and (max-width:600px){
     
      .left{
@@ -63,6 +66,25 @@
 .card{
     width: 100%; 
 }
+.cartBill.btn-group.btn-group-toggle{
+    display: flex;
+    }
+.cartBillP{
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    height:35px ;
+    background-color:rgb(59, 163, 248);
+    margin-top: 5px;
+}
+.cartBill{
+    height: 40px;
+    width: 100%;
+    
+
+
+}
+
 
 }
 /* .gradient-custom {
