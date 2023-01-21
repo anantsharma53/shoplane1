@@ -87,30 +87,30 @@ const Cart = (props) => {
                   <h5 class="mb-0">Summary</h5>
                 </div>
                 <div class="card-body">
-                  <ul class="list-group list-group-flush">
+                  <ul class="list-group list-group-flush ">
                     <li
-                      class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                      class=" list-group-item d-flex justify-content-between align-items-center ">
                       Products ({totalQuantity} items)
                       <span>&#8377;{totaBill}</span>
                     </li>
                     <li
-                      class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                      class="list-group-item d-flex justify-content-between align-items-center ">
                       Shipping
-                      <span>&#8377;200</span>
+                      <span>&#8377;40</span>
                     </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
                       Tax
-                      <span>&#8377;55</span>
+                      <span>&#8377;{Math.round((totaBill*18)/100)}</span>
                     </li>
                     <li
-                      class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                      class="list-group-item d-flex justify-content-between align-items-center  mb-3">
                       <div>
                         <strong>Total amount</strong>
                         <strong>
                           <p class="mb-0">(including Tax)</p>
                         </strong>
                       </div>
-                      <span><strong>&#8377;{(totaBill + 200 + 55)}</strong></span>
+                      <span><strong>&#8377;{Math.round((totaBill + 40 + ((totaBill*18)/100)))}</strong></span>
                     </li>
                   </ul>
 

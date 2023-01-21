@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/fontawesome-free-regular";
 import { cartSelector } from "../../../reducers/cartReducer";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { faUserPlus, faHeart, faUser } from '@fortawesome/fontawesome-free-solid';
 
@@ -15,6 +15,9 @@ function Header(props) {
   var totalNoOfCartItem = 0
   if (cartItemCount > cartItemCount2) { totalNoOfCartItem = cartItemCount } else { totalNoOfCartItem = cartItemCount2 }
   //console.log(cartItemCount);
+  const location =useLocation();
+  const {pathname}=location;
+  const splitLocation = pathname.split("/");
 
   return (
     <div >
@@ -99,19 +102,19 @@ function Header(props) {
           <div className="collapse navbar-collapse justify-content-center"
             id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item ">
+              <li class="nav-item " className={splitLocation[1]===""?"active":""}>
                 <Link to="/" class="nav-link" >Home </Link>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" className={splitLocation[1]==="electronics"?"active":""}>
                 <Link to="/electronics" class="nav-link" >Electronic</Link>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" className={splitLocation[1]==="jewelery"?"active":""}>
                 <Link to="/jewelery" class="nav-link" >Jewelery</Link>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" className={splitLocation[1]==="mencloth"?"active":""}>
                 <Link to="/mencloth" class="nav-link">Men's Clothing</Link>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" className={splitLocation[1]==="womencloth"?"active":""}>
                 <Link to="/womencloth" class="nav-link">Women's Clothing</Link>
               </li>
             </ul>
