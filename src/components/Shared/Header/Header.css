@@ -64,6 +64,12 @@ hr{
     -moz-border-radius: 9px;
     border-radius: 9px;
   }
+  .dropdown-item{
+    cursor: pointer;
+  }
+  .userName{
+    background-color:rgb(59, 163, 248); ;
+  }
   
   .label-warning[href],
   .badge-warning[href] {

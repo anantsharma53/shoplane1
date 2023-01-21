@@ -5,12 +5,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { cartSelector } from "../../reducers/cartReducer";
 import { getTotal, clearCart } from "../../reducers/cartReducer";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import Footer from './../../components/Shared/Footer/Footer';
 const Cart = (props) => {
   const items = useSelector(cartSelector).value;
   const totaBill = useSelector(cartSelector).totalPrice;
   const totalQuantity = useSelector(cartSelector).totalQuantity;
+  const userName=useSelector(cartSelector).userInfo;
+  let navigat=useNavigate();
   //console.log(items.length);
   const dispatch = useDispatch();
   //dispatch(getTotal());
@@ -21,6 +23,9 @@ const Cart = (props) => {
   const handleClearCart = () => {
     dispatch(clearCart());
   };
+  function checkout(){
+    navigat("/payment");
+  }
   console.log()
   return (
     items.length === 0 ? (
@@ -70,9 +75,7 @@ const Cart = (props) => {
               <input type="radio" name="options" id="option3" autocomplete="off" /> CheckOut
             </label>
           </div>
-          {/* <div className="cartBill">Cart Bill &#8377;{(totaBill + 200 + 55)}
-        <a> CheckOut</a>
-        </div> */}
+          
           <div className="left">
             {items &&
               items.map((cartItem, i) => (
@@ -107,14 +110,14 @@ const Cart = (props) => {
                       <div>
                         <strong>Total amount</strong>
                         <strong>
-                          <p class="mb-0">(including Tax)</p>
+                          <p class="mb-0">(including 18% GST)</p>
                         </strong>
                       </div>
                       <span><strong>&#8377;{Math.round((totaBill + 40 + ((totaBill*18)/100)))}</strong></span>
                     </li>
                   </ul>
 
-                  <button type="button" class="btn btn-primary btn-lg btn-block">
+                  <button onClick={checkout} type="button" class="btn btn-primary btn-lg btn-block">
                     Go to checkout
                   </button>
                   <button onClick={handleClearCart} className="btn btn-primary btn-lg btn-block">

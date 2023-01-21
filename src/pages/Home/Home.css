@@ -6,8 +6,8 @@
 }
 .container {
   padding:0;
-  margin: 1px;
-  
+  margin-left: 2px; 
+  margin-left: 100px;
 }
  
 @media screen and (max-width:600px){

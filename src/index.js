@@ -16,6 +16,7 @@ import MenCloth from './pages/MenCloth/MenCloth';
 import WomenCloth from './pages/WomenCloth/WomenCloth';
 import ProductSingle from './components/ProductSinglePage/ProductSingle';
 import NotFoundPage from "./pages/PageNotFound/Error";
+import Payment from "./pages/PaymentPage/PaymentPage";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -33,18 +34,19 @@ root.render(
         <Route path="/mencloth" element={<MenCloth />}></Route>
         <Route path="/womencloth" element={<WomenCloth />}></Route>
         <Route path="/FavCart" element={<FavCart />}></Route>
-        <Route path="/FavCart/Cart" element={<Cart />}></Route>
-        <Route path="/electronics/Cart" element={<Cart />}></Route>
-        <Route path="/jewelery/Cart" element={<Cart />}></Route>
-        <Route path="/mencloth/Cart" element={<Cart />}></Route>
-        <Route path="/womencloth/Cart" element={<Cart />}></Route>
+        {/* <Route path="/FavCart/Cart" element={<Cart />}></Route> */}
+        {/* <Route path="/electronics/Cart" element={<Cart />}></Route> */}
+        {/* <Route path="/jewelery/Cart" element={<Cart />}></Route> */}
+        {/* <Route path="/mencloth/Cart" element={<Cart />}></Route> */}
+        {/* <Route path="/womencloth/Cart" element={<Cart />}></Route> */}
         <Route path="/products/:id" element={<ProductSingle />}></Route>
-        <Route path="/electronics/Cart" element={<Cart />}></Route>
-        <Route path="/products/:id/Cart" element={<Cart />}></Route>
-        <Route path="/Login/Cart" element={<Cart />}></Route>
-        <Route path="/register/Cart" element={<Cart />}></Route>
+        {/* <Route path="/electronics/Cart" element={<Cart />}></Route> */}
+        {/* <Route path="/products/:id/Cart" element={<Cart />}></Route> */}
+        {/* <Route path="/Login/Cart" element={<Cart />}></Route> */}
+        {/* <Route path="/register/Cart" element={<Cart />}></Route> */}
         <Route path="*" element={<NotFoundPage />}></Route>
-        
+        <Route path="/payment" element={<Payment />}></Route>
+        {/* <Route path="/payment/cart" element={<Cart />}></Route> */}
       </Routes>
     </BrowserRouter>
   </Provider>

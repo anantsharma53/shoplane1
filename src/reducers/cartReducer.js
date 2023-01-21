@@ -4,6 +4,7 @@ import {createSlice} from "@reduxjs/toolkit";
 const initialState ={
      value: [],
      Favourite:[],
+     userInfo:[],
      totalQuantity:0,
      totalPrice:0
 }
@@ -78,12 +79,16 @@ const cartSlice = createSlice({
         clearCart(state) {
             state.value = [];
             
-          }
+          },
+        addUser:(state,action)=>{
+            state.userInfo.push(action.payload);
+
+        },
         
         },    
 });
 // exporting actions for components to call.
-export const { add, removeFromCart,decreaseCart,getTotal,clearCart,addFav,removeFromFavCart} = cartSlice.actions;
+export const { add, removeFromCart,decreaseCart,getTotal,clearCart,addFav,removeFromFavCart,addUser} = cartSlice.actions;
 // selector to select cart data.
 export const cartSelector = (state)=> state.cartItems;
 export default cartSlice.reducer;

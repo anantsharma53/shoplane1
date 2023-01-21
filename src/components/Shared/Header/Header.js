@@ -5,19 +5,24 @@ import { faUserCircle } from "@fortawesome/fontawesome-free-regular";
 import { cartSelector } from "../../../reducers/cartReducer";
 import { Link, useLocation } from "react-router-dom";
 
-import { faUserPlus, faHeart, faUser } from '@fortawesome/fontawesome-free-solid';
+import { faUserPlus, faHeart, faUser, faShoppingCart } from '@fortawesome/fontawesome-free-solid';
 
 
 function Header(props) {
 
   const cartItemCount = useSelector(cartSelector).value.length;
   const cartItemCount2 = useSelector(cartSelector).totalQuantity;
+  const username=useSelector(cartSelector).userInfo;
+  console.log(username);
   var totalNoOfCartItem = 0
   if (cartItemCount > cartItemCount2) { totalNoOfCartItem = cartItemCount } else { totalNoOfCartItem = cartItemCount2 }
   //console.log(cartItemCount);
   const location =useLocation();
   const {pathname}=location;
   const splitLocation = pathname.split("/");
+  function pageReload(){
+    window.location.reload(true);
+  }
 
   return (
     <div >
@@ -43,22 +48,24 @@ function Header(props) {
             <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
               <div className="DropDownState">
                 <div>
-                  <FontAwesomeIcon icon={faUserCircle} style={{ height: "35px" }} />
+                  <FontAwesomeIcon icon={faUserCircle} style={{ height: "20px" }} />
                 </div>
                 <div >
-                  <span>&nbsp;Login <br></br>&nbsp;or Sign Up</span>
+                  {/* <span>&nbsp;Login <br></br>&nbsp;or Sign Up</span> */}
+                  <span  STYLE="font-size:18px" >&nbsp;{username.length>0?username :"Login or Sign Up"}&nbsp;</span>
                 </div>
               </div>
 
             </button>
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><Link to="/Login" class="dropdown-item" ><FontAwesomeIcon icon={faUser} style={{ height: "" }} /> Login</Link></li>
-              <li><Link to="/register" class="dropdown-item" ><FontAwesomeIcon icon={faUserPlus} style={{ height: "" }} /> Sign Up</Link></li>
-              <li><Link to="/FavCart" class="dropdown-item" ><FontAwesomeIcon icon={faHeart} style={{ height: "" }} /> Favourite</Link></li>
+              {username.length>0?<li onClick= {pageReload}class="dropdown-item" ><FontAwesomeIcon icon={faUser} style={{ height: "" }} /> Logout</li>:
+              <li><Link to="/Login" class="dropdown-item" ><FontAwesomeIcon icon={faUser} style={{ height: "" }} /> Login</Link></li>}
+              {username.length>0?<li><Link to="/cart"class="dropdown-item"><FontAwesomeIcon icon={faShoppingCart } style={{ height: "" }} /> Cart</Link></li>:<li><Link to="/register" class="dropdown-item" ><FontAwesomeIcon icon={faUserPlus} style={{ height: "" }} /> Sign Up</Link></li>
+              }<li><Link to="/FavCart" class="dropdown-item" ><FontAwesomeIcon icon={faHeart} style={{ height: "" }} /> Favourite</Link></li>
             </ul>
           </div>
           <div className="cart">
-            <Link to="Cart" className="navbar-brand icon-container" >
+            <Link to="/cart" className="navbar-brand icon-container" >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"

@@ -2,16 +2,24 @@ import Footer from "../../components/Shared/Footer/Footer";
 import Header from "../../components/Shared/Header/Header";
 import "./Login.css";
 import { useState } from "react";
-import { useLocation} from "react-router-dom";
+import { useLocation,useNavigate} from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import loginDetails from '../../data/loginDetails.json';
+import { addUser } from "../../reducers/cartReducer";
+
 function Login() {
+  let navigate = useNavigate();
+  const dispatch=useDispatch();
   let location = useLocation();
- 
+  
+  //const[userName,setUserName]=useState([]);
 
   console.log(location.pathname);
   const [formData, setFormData] = useState({
     email: '',
-    password: ''
+    password: '',
+    
 
   });
 
@@ -22,16 +30,20 @@ function Login() {
     // console.log(e.target[0].value);
     // console.log(e.target[1].value);
     console.log("cheking")
-    if (email && password) {
+    if (loginDetails.email === email && loginDetails.password === password) {
       //updateState(true);
       //console.log("todo")
+      //setUserName=loginDetails.name;
       alert("Succusful Login")
+      dispatch(addUser(loginDetails.name));
+      navigate("/");
+
      
     }
     else {
       alert("Please Re-Login with correct Crede")
     }
-
+    
   }
   function handleChange(e) {
     e.preventDefault();
