@@ -16,6 +16,7 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.3",
     "font-awesome": "^4.7.0",
+    "formik": "^2.2.9",
     "framer-motion": "^8.4.3",
     "mdb-react-ui-kit": "^5.1.0",
     "react": "^18.2.0",
@@ -25,7 +26,8 @@
     "react-responsive-modal": "^6.4.1",
     "react-router-dom": "^6.4.5",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",

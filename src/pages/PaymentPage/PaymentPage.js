@@ -1,14 +1,22 @@
 import Footer from "../../components/Shared/Footer/Footer";
 import Header from "../../components/Shared/Header/Header";
 import "./PaymentPage.css";
-import { cartSelector } from "../../reducers/cartReducer";
-import { useSelector } from 'react-redux';
+import { cartSelector,clearCart } from "../../reducers/cartReducer";
+import { useSelector, useDispatch } from 'react-redux';
 import Login from "../Login/Login";
+import { useNavigate } from 'react-router-dom';
 
 
 function Payment() {
     const username = useSelector(cartSelector).userInfo;
+    let navigate=useNavigate()
+    const dispatch=useDispatch();
     console.log(username);
+    function hendleSubmit(){
+        navigate("/");
+        dispatch(clearCart());
+
+    }
     return (
 
 
@@ -135,7 +143,7 @@ function Payment() {
                                                 </div>
                                             </div>
                                             <div class="col-8">
-                                                <div class="btn btn-primary w-100">Sumbit</div>
+                                                <div class="btn btn-primary w-100" onClick={hendleSubmit}>Sumbit</div>
                                             </div>
                                         </div>
                                     </form>
@@ -158,9 +166,9 @@ function Payment() {
       
             </div>
           ) : (
-      
-            <div class=" mt-80">
                 
+            <div class=" mt-80">
+                {alert("Please Login or Sign up for complete the order")}
                     
                     <Login></Login>
       
